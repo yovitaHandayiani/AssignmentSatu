@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AssignmentSatu</string>
+    <string name="page_title"></string>
+    <string name="content_description_share">This is share icon</string>
+    <string name="content_description_favorite">This is favorite icon</string>
+    <string name="menu_title">Deluxe Cheese Stuffed Crust Pizza Keju</string>
+    <string name="menu_current_price">Rp126.000</string>
+    <string name="discount">12%</string>
+    <string name="menu_before_price"><strike>Rp146.000</strike></string>
+</resources>
