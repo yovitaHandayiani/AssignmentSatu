@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
+            android:id="@+id/mdTopAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
@@ -63,7 +63,7 @@
 
     <!--    https://m2.material.io/components/chips/android#using-chips-->
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip"
+        android:id="@+id/mdChip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -86,26 +86,70 @@
         android:layout_marginStart="8dp"
         android:text="@string/menu_before_price"
         android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/chip"
-        app:layout_constraintStart_toEndOf="@id/chip"
-        app:layout_constraintTop_toTopOf="@id/chip" />
+        app:layout_constraintBottom_toBottomOf="@id/mdChip"
+        app:layout_constraintStart_toEndOf="@id/mdChip"
+        app:layout_constraintTop_toTopOf="@id/mdChip" />
 
+    <!--    divider-->
     <View
-        android:id="@+id/dividerThin"
+        android:id="@+id/vDividerThin"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
         android:layout_marginTop="16dp"
+        android:background="#9B9B9B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvMenuBeforePrice" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/tvMenuDescription"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini."-->
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Deskripsi Produk"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vDividerThin" />
 
-    <!--        android:layout_marginTop="50dp"/>-->
+    <TextView
+        android:id="@+id/tvMenuDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
 
+    <Button
+        android:id="@+id/mdTextButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:text="Selengkapnya"
+        android:textColor="#00579E"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMenuDescription" />
 
+    <!--    divider-->
+    <View
+        android:id="@+id/vDividerThinDua"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#9B9B9B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mdTextButton" />
+
+    <View
+        android:id="@+id/vDividerThick"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#CECECE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mdTextButton" />
+
+    <!--recycler`1-->
+    <!--recycler`2-->
 </androidx.constraintlayout.widget.ConstraintLayout>
