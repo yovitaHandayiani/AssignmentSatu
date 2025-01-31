@@ -7,151 +7,208 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--    imagePizza-->
-    <ImageView
-        android:id="@+id/ivProduct"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/pizza"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!--    top navigation bar-->
-    <!--    https://m2.material.io/components/app-bars-top/android-->
-    <com.google.android.material.appbar.AppBarLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/mdTopAppBar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/back_svgrepo_com"
-            app:navigationIconTint="#909090"
-            app:title="@string/page_title" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="match_parent">
 
-    <!--    Content-->
-    <TextView
-        android:id="@+id/tvMenuTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/menu_title"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivProduct" />
+            <!--    imagePizza-->
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pizza"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvMenuPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/menu_current_price"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMenuTitle" />
+            <!--    top navigation bar-->
+            <!--    https://m2.material.io/components/app-bars-top/android-->
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <!--    https://m2.material.io/components/chips/android#using-chips-->
-    <com.google.android.material.chip.Chip
-        android:id="@+id/mdChip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/discount"
-        android:textColor="#9B0000"
-        app:chipBackgroundColor="#55F88181"
-        app:chipCornerRadius="0dp"
-        app:chipEndPadding="-2dp"
-        app:chipMinHeight="25dp"
-        app:chipMinTouchTargetSize="0dp"
-        app:chipStartPadding="-2dp"
-        app:chipStrokeWidth="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMenuPrice" />
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/mdTopAppBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:menu="@menu/top_app_bar"
+                    app:navigationIcon="@drawable/back_svgrepo_com"
+                    app:navigationIconTint="#909090"
+                    app:title="@string/page_title" />
+            </com.google.android.material.appbar.AppBarLayout>
 
-    <TextView
-        android:id="@+id/tvMenuBeforePrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/menu_before_price"
-        android:textSize="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/mdChip"
-        app:layout_constraintStart_toEndOf="@id/mdChip"
-        app:layout_constraintTop_toTopOf="@id/mdChip" />
+            <!--    Content-->
+            <TextView
+                android:id="@+id/tvMenuTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/menu_title"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivProduct" />
 
-    <!--    divider-->
-    <View
-        android:id="@+id/vDividerThin"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="#9B9B9B"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvMenuBeforePrice" />
+            <TextView
+                android:id="@+id/tvMenuPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/menu_current_price"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMenuTitle" />
 
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Deskripsi Produk"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/vDividerThin" />
+            <!--    https://m2.material.io/components/chips/android#using-chips-->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/mdChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/discount"
+                android:textColor="#9B0000"
+                app:chipBackgroundColor="#55F88181"
+                app:chipCornerRadius="0dp"
+                app:chipEndPadding="-2dp"
+                app:chipMinHeight="25dp"
+                app:chipMinTouchTargetSize="0dp"
+                app:chipStartPadding="-2dp"
+                app:chipStrokeWidth="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMenuPrice" />
 
-    <TextView
-        android:id="@+id/tvMenuDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+            <TextView
+                android:id="@+id/tvMenuBeforePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/menu_before_price"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@id/mdChip"
+                app:layout_constraintStart_toEndOf="@id/mdChip"
+                app:layout_constraintTop_toTopOf="@id/mdChip" />
 
-    <!--    https://m2.material.io/components/buttons/android#text-button-->
-    <Button
-        android:id="@+id/mdTextButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp"
-        android:text="Selengkapnya"
-        android:textColor="#00579E"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMenuDescription" />
+            <!--    divider-->
+            <View
+                android:id="@+id/vDividerThin"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="#9B9B9B"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMenuBeforePrice" />
 
-    <!--    divider-->
-    <View
-        android:id="@+id/vDividerThinDua"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#9B9B9B"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mdTextButton" />
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Deskripsi Produk"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vDividerThin" />
 
-    <View
-        android:id="@+id/vDividerThick"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:background="#CECECE"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mdTextButton" />
+            <TextView
+                android:id="@+id/tvMenuDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
 
-    <!--recycler`1-->
-    <!--recycler`2-->
+            <!--    https://m2.material.io/components/buttons/android#text-button-->
+            <Button
+                android:id="@+id/mdTextButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:text="Selengkapnya"
+                android:textColor="#00579E"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMenuDescription" />
+
+            <!--    divider-->
+            <View
+                android:id="@+id/vDividerThinDua"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#9B9B9B"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mdTextButton" />
+
+            <View
+                android:id="@+id/vDividerThick"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#CECECE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vDividerThinDua" />
+
+            <!--recycler`1-->
+            <include
+                android:id="@+id/rvContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/penyajian_recycler_view"
+                app:layout_constraintTop_toBottomOf="@id/vDividerThick"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+            </include>
+
+            <View
+                android:id="@+id/vDividerThickDua"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#CECECE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvContainer"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/label"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+<!--            -->
+<!--            <EditText-->
+<!--                android:id="@+id/etCatatan"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="textMultiLine"-->
+<!--                android:lines="3"-->
+<!--                android:maxLines="10"-->
+<!--                android:minLines="6"-->
+<!--                android:scrollbars="vertical"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/vDividerThickDua"/>-->
+
+            <!--recycler`2-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

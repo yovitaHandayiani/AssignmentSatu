@@ -7,4 +7,6 @@
     <string name="menu_current_price">Rp126.000</string>
     <string name="discount">12%</string>
     <string name="menu_before_price"><strike>Rp146.000</strike></string>
+    <string name="radio_button_desc">SERVICE CHARGE DINE IN</string>
+    <string name="radio_button_price">2.000+</string>
 </resources>
