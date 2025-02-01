@@ -209,6 +209,5 @@
 
             <!--recycler`2-->
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
