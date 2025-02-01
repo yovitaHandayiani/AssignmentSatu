@@ -163,16 +163,16 @@
                 app:layout_constraintTop_toBottomOf="@id/vDividerThinDua" />
 
             <!--recycler`1-->
-            <include
-                android:id="@+id/rvContainer"
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                layout="@layout/penyajian_recycler_view"
+                tools:itemCount="2"
+                tools:listitem="@layout/penyajian"
+                android:id="@+id/rvContainer"
                 app:layout_constraintTop_toBottomOf="@id/vDividerThick"
                 app:layout_constraintStart_toStartOf="parent"
                 >
-            </include>
-
+            </androidx.recyclerview.widget.RecyclerView>
             <View
                 android:id="@+id/vDividerThickDua"
                 android:layout_width="match_parent"
@@ -181,12 +181,23 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rvContainer"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catatan"
+                >
+            </TextView>
+
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/label"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:hint="Catatan"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vDividerThickDua"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
