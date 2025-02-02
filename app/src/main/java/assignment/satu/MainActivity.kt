@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         /*RECYCLER VIEW*/
         //setContentView(R.layout.penyajian_recycler_view)
         // getting the recyclerview by its id
-        val recyclerview = findViewById<RecyclerView>(R.id.rvPenyajian)
+        val recyclerview = findViewById<RecyclerView>(R.id.rvContainer)
 
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)

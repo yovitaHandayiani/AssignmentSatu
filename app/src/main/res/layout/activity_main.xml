@@ -24,6 +24,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/pizza"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +45,7 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     app:menu="@menu/top_app_bar"
                     app:navigationIcon="@drawable/back_svgrepo_com"
-                    app:navigationIconTint="#909090"
+                    app:navigationIconTint="@android:color/darker_gray"
                     app:title="@string/page_title" />
             </com.google.android.material.appbar.AppBarLayout>
 
@@ -53,7 +54,9 @@
                 android:id="@+id/tvMenuTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
                 android:text="@string/menu_title"
                 android:textSize="16dp"
                 android:textStyle="bold"
@@ -64,7 +67,9 @@
                 android:id="@+id/tvMenuPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="12dp"
                 android:text="@string/menu_current_price"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -76,6 +81,7 @@
                 android:id="@+id/mdChip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/discount"
                 android:textColor="#9B0000"
@@ -94,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp"
                 android:text="@string/menu_before_price"
                 android:textSize="12dp"
                 app:layout_constraintBottom_toBottomOf="@id/mdChip"
@@ -105,8 +112,10 @@
                 android:id="@+id/vDividerThin"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
-                android:background="#9B9B9B"
+                android:layout_marginEnd="12dp"
+                android:background="@android:color/darker_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMenuBeforePrice" />
 
@@ -114,7 +123,9 @@
                 android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
                 android:text="Deskripsi Produk"
                 android:textSize="12dp"
                 android:textStyle="bold"
@@ -123,9 +134,11 @@
 
             <TextView
                 android:id="@+id/tvMenuDescription"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
                 android:text="Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini."
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDescription" />
@@ -136,6 +149,9 @@
                 style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:paddingLeft="0dp"
                 android:paddingTop="0dp"
                 android:paddingBottom="0dp"
                 android:text="Selengkapnya"
@@ -149,7 +165,9 @@
                 android:id="@+id/vDividerThinDua"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#9B9B9B"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:background="@android:color/darker_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mdTextButton" />
 
@@ -158,68 +176,121 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_marginTop="20dp"
-                android:background="#CECECE"
+                android:background="@android:color/darker_gray"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/vDividerThinDua" />
 
-            <!--recycler`1-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvServiceTitle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:itemCount="2"
-                tools:listitem="@layout/penyajian"
-                android:id="@+id/rvContainer"
-                app:layout_constraintTop_toBottomOf="@id/vDividerThick"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="12dp"
+                android:text="Penyajian"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                >
-            </androidx.recyclerview.widget.RecyclerView>
-            <View
-                android:id="@+id/vDividerThickDua"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="#CECECE"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvContainer"/>
+                app:layout_constraintTop_toTopOf="@+id/vDividerThick" />
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Catatan"
-                >
-            </TextView>
+                android:layout_marginStart="8dp"
+                android:text="pilih 1"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/tvServiceTitle"
+                app:layout_constraintStart_toEndOf="@+id/tvServiceTitle"
+                app:layout_constraintTop_toTopOf="@+id/tvServiceTitle" />
+
+            <!--recycler`1-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvServiceTitle"
+                tools:itemCount="2"
+                tools:listitem="@layout/penyajian" />
+
+            <View
+                android:id="@+id/vDividerThickDua"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvContainer" />
+
+            <TextView
+                android:id="@+id/tvNotesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:text="Catatan Pesanan"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vDividerThickDua" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="opsional"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@+id/tvNotesTitle"
+                app:layout_constraintStart_toEndOf="@+id/tvNotesTitle"
+                app:layout_constraintTop_toTopOf="@+id/tvNotesTitle" />
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/outlinedTextField"
+                android:id="@+id/tilOrderNotes"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Catatan"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:hint="Contoh: Minta Tissue, ya"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/vDividerThickDua"
-                >
+                app:layout_constraintTop_toBottomOf="@id/tvNotesTitle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
-<!--            -->
-<!--            <EditText-->
-<!--                android:id="@+id/etCatatan"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:inputType="textMultiLine"-->
-<!--                android:lines="3"-->
-<!--                android:maxLines="10"-->
-<!--                android:minLines="6"-->
-<!--                android:scrollbars="vertical"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/vDividerThickDua"/>-->
 
             <!--recycler`2-->
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="12dp"
+                android:text="Produk Serupa"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilOrderNotes" />
+            <!--            -->
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="akjshdbak"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
