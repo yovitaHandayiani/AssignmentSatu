@@ -12,4 +12,14 @@
     <string name="card_price_disc"><strike>Rp67.760</strike></string>
     <string name="card_price_normal">Rp77.000</string>
     <string name="card_title">Super Supreme Chicken Pan Pizza</string>
+    <string name="deskripsi_produk_title">Deskripsi Produk</string>
+    <string name="product_desc">Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini.</string>
+    <string name="show_more_btn">Selengkapnya</string>
+    <string name="service">Penyajian</string>
+    <string name="service_detail">pilih 1</string>
+    <string name="notes_title">Catatan Pesanan</string>
+    <string name="notes_detail">opsional</string>
+    <string name="notes_hint">Contoh: Minta Tissue, ya</string>
+    <string name="rec_product">Produk Serupa</string>
+    <string name="add_to_cart_btn">+ Keranjang</string>
 </resources>
