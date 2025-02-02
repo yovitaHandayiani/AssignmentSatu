@@ -30,7 +30,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <!--    top navigation bar-->
-            <!--    https://m2.material.io/components/app-bars-top/android-->
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -76,7 +75,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMenuTitle" />
 
-            <!--    https://m2.material.io/components/chips/android#using-chips-->
             <com.google.android.material.chip.Chip
                 android:id="@+id/mdChip"
                 android:layout_width="wrap_content"
@@ -147,7 +145,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDescription" />
 
-            <!--    https://m2.material.io/components/buttons/android#text-button-->
             <Button
                 android:id="@+id/mdTextButton"
                 style="@style/Widget.MaterialComponents.Button.TextButton"

@@ -8,13 +8,10 @@ import assignment.satu.databinding.PenyajianBinding
 class PenyajianAdapter(
     var listPenyajian: List<PenyajianData>, var selectedPenyajian: (PenyajianData) -> Unit
 ) : RecyclerView.Adapter<PenyajianAdapter.ViewHolder>() {
-    // Holds the views for adding it to image and text
     class ViewHolder(val binding: PenyajianBinding) : RecyclerView.ViewHolder(binding.root)
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // inflates the card_view_design view
-        // that is used to hold list item
         return ViewHolder(
             PenyajianBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
