@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         data2.add(
             ProductSerupaData(
-                image = R.drawable.pizza,
+                image = R.drawable.super_supreme_chicken_pan_pizza,
                 title = "Super Supreme Chicken Pan Pizza",
                 price = "Rp77.000",
                 discPrice = "Rp67.760",
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             ))
         data2.add(
             ProductSerupaData(
-                image = R.drawable.pizza,
+                image = R.drawable.italian_meatballs_pizza_pan_pizza,
                 title = "Italian Meatballs Pizza Pan Pizza",
                 price = "Rp78.000",
                 discPrice = "Rp68.640",
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             ))
         data2.add(
             ProductSerupaData(
-                image = R.drawable.pizza,
+                image = R.drawable.frankfurter_bbq_pan_pizza,
                 title = "Frankfurter BBQ Pan Pizza",
                 price = "Rp78.000",
                 discPrice = "",
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             ))
         data2.add(
             ProductSerupaData(
-                image = R.drawable.pizza,
+                image = R.drawable.supreme,
                 title = "Super Supreme Beef Pan Pizza",
                 price = "Rp77.000",
                 discPrice = "",
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             ))
         data2.add(
             ProductSerupaData(
-                image = R.drawable.pizza,
+                image = R.drawable.meat_lovers_pan_pizza,
                 title = "Meat Lovers Pan Pizza",
                 price = "Rp77.000",
                 discPrice = "",
