@@ -4,9 +4,12 @@
     <string name="content_description_share">This is share icon</string>
     <string name="content_description_favorite">This is favorite icon</string>
     <string name="menu_title">Deluxe Cheese Stuffed Crust Pizza Keju</string>
-    <string name="menu_current_price">Rp126.000</string>
+    <string name="menu_current_price">Rp146.000</string>
     <string name="discount">12%</string>
-    <string name="menu_before_price"><strike>Rp146.000</strike></string>
+    <string name="menu_before_price"><strike>Rp128.480</strike></string>
     <string name="radio_button_desc">SERVICE CHARGE DINE IN</string>
     <string name="radio_button_price">2.000+</string>
+    <string name="card_price_disc"><strike>Rp67.760</strike></string>
+    <string name="card_price_normal">Rp77.000</string>
+    <string name="card_title">Super Supreme Chicken Pan Pizza</string>
 </resources>

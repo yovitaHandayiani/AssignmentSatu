@@ -58,7 +58,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:text="@string/menu_title"
-                android:textSize="16dp"
+                android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ivProduct" />
@@ -71,7 +71,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="12dp"
                 android:text="@string/menu_current_price"
-                android:textSize="20dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMenuTitle" />
@@ -84,6 +84,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/discount"
+                android:textAppearance="?attr/textAppearanceCaption"
                 android:textColor="#9B0000"
                 app:chipBackgroundColor="#55F88181"
                 app:chipCornerRadius="0dp"
@@ -102,7 +103,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="12dp"
                 android:text="@string/menu_before_price"
-                android:textSize="12dp"
+                android:textAppearance="?attr/textAppearanceCaption"
                 app:layout_constraintBottom_toBottomOf="@id/mdChip"
                 app:layout_constraintStart_toEndOf="@id/mdChip"
                 app:layout_constraintTop_toTopOf="@id/mdChip" />
@@ -127,7 +128,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:text="Deskripsi Produk"
-                android:textSize="12dp"
+                android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/vDividerThin" />
@@ -140,6 +141,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
                 android:text="Keju bertumpuk keju berlapis keju dengan saus tomat pizza! Siapa yang tak tergoda dengan gurihnya pizza 100% keju yang satu ini."
+                android:textAppearance="?attr/textAppearanceBody1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvDescription" />
 
@@ -155,6 +157,7 @@
                 android:paddingTop="0dp"
                 android:paddingBottom="0dp"
                 android:text="Selengkapnya"
+                android:textAppearance="?attr/textAppearanceBody1"
                 android:textColor="#00579E"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -188,6 +191,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="12dp"
                 android:text="Penyajian"
+                android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/vDividerThick" />
@@ -198,6 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="pilih 1"
+                android:textAppearance="?attr/textAppearanceCaption"
                 android:textColor="@android:color/darker_gray"
                 app:layout_constraintBottom_toBottomOf="@+id/tvServiceTitle"
                 app:layout_constraintStart_toEndOf="@+id/tvServiceTitle"
@@ -205,7 +210,7 @@
 
             <!--recycler`1-->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvContainer"
+                android:id="@+id/rvContainer1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
@@ -221,7 +226,7 @@
                 android:layout_height="20dp"
                 android:background="@android:color/darker_gray"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rvContainer" />
+                app:layout_constraintTop_toBottomOf="@id/rvContainer1" />
 
             <TextView
                 android:id="@+id/tvNotesTitle"
@@ -231,6 +236,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="12dp"
                 android:text="Catatan Pesanan"
+                android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/vDividerThickDua" />
@@ -240,6 +246,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="opsional"
+                android:textAppearance="?attr/textAppearanceCaption"
                 android:textColor="@android:color/darker_gray"
                 app:layout_constraintBottom_toBottomOf="@+id/tvNotesTitle"
                 app:layout_constraintStart_toEndOf="@+id/tvNotesTitle"
@@ -255,42 +262,107 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="12dp"
                 android:hint="Contoh: Minta Tissue, ya"
+                android:textAppearance="?attr/textAppearanceBody1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvNotesTitle">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBody1" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <!--recycler`2-->
             <TextView
+                android:id="@+id/tvRecTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="12dp"
                 android:text="Produk Serupa"
+                android:textAppearance="?attr/textAppearanceBody1"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilOrderNotes" />
-            <!--            -->
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
+                tools:listitem="@layout/produk_serupa"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:orientation="horizontal"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_constraintTop_toBottomOf="@+id/rvContainer2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@android:color/transparent"
+                >
+            </View>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white"
+        >
+        <View
+            android:id="@+id/vDividerThinTiga"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="akjshdbak"
-            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/bIconButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:icon = "@drawable/cart_shopping_svgrepo_com"
+            app:iconTint = "@color/blue"
+            app:iconSize = "28dp"
+            app:iconGravity="textStart"
+            app:strokeColor = "@color/blue"
+            style="?attr/materialButtonOutlinedStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            app:cornerRadius = "8dp"
+            android:layout_marginStart="12dp"
+            android:importantForAccessibility="no"
+            />
+
+        <Button
+            android:id="@+id/bTextIconButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            app:strokeColor = "@color/blue"
+            android:text="+ Keranjang"
+            android:textAppearance="?attr/textAppearanceButton"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/blue"
+            style="?attr/materialButtonOutlinedStyle"
+            app:layout_constraintStart_toEndOf="@+id/bIconButton"
+            app:layout_constraintTop_toTopOf="@+id/bIconButton"
+            app:layout_constraintBottom_toBottomOf="@+id/bIconButton"
+            app:cornerRadius = "8dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginEnd="12dp"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
