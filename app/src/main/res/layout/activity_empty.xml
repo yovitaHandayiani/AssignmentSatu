@@ -33,4 +33,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go To ActivityThird"/>
+
+    <Button
+        android:id="@+id/parcelableOBJ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="parcelableOBJ"/>
+
+    <Button
+        android:id="@+id/imageFromGallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="imageFromGallery"/>
+
+    <Button
+        android:id="@+id/imageFromGalleryMultiple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="imageFromGalleryMultiple"/>
+
+    <ImageView
+        android:id="@+id/capturedImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="capturedImageView"/>
+
+
 </LinearLayout>
