@@ -304,6 +304,7 @@
                 tools:orientation="horizontal"
                 >
             </androidx.recyclerview.widget.RecyclerView>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="120dp"

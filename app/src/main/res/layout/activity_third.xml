@@ -7,30 +7,25 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ActivityEmpty">
+    tools:context=".ActivityThird">
+
+    <TextView
+        android:id="@+id/tvNum3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="This Is ActivityThird" />
+
+    <TextView
+        android:id="@+id/tvCol3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:hint="This Is ActivityThird" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Back To MainActivity" />
-
-    <EditText
-        android:id="@+id/etNum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Number" />
-
-    <EditText
-        android:id="@+id/etCol"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Color" />
-
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go To ActivityThird"/>
+        android:text="Back To ActivityWmpty"/>
 </LinearLayout>
