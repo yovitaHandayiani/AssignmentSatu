@@ -21,12 +21,23 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+            <!-- Main activity for launching the app from the home screen -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Deep link configuration to handle myapp://home -->
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Define the deep link format -->
+                <data android:scheme="myapp" android:host="pizzaapp" android:pathPrefix="/products"/>
             </intent-filter>
         </activity>
     </application>
 
 </manifest>
+

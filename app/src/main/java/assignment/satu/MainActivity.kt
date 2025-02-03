@@ -3,6 +3,7 @@ package assignment.satu
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
@@ -134,17 +135,48 @@ class MainActivity : AppCompatActivity() {
             resultLauncher.launch(intent)  // Launch ActivityEmpty and expect a result
         }
 
+//        val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+//            data = Uri.parse("mailto:example@example.com") // Replace with the email address
+//            putExtra(Intent.EXTRA_SUBJECT, "Subject of the email") // Optional: Email subject
+//            putExtra(Intent.EXTRA_TEXT, "Body of the email") // Optional: Email body
+//        }
+
         toolbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.favorite -> {
                     // Handle favorite icon press
-                    val intent = intent.(intent.ACTION_VIEW)
+                    val intent = Intent(Intent.ACTION_VIEW)
                     intent.data = Uri.parse("https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWE3OXY1Nmh0eGNpeHNlMmp5ejRzaWtnODMxcWdtMzMydnYzMHNwaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GJACwlJbtiWrYeWoqM/giphy.gif")
                     startActivity(intent)
                     true
                 }
                 R.id.share -> {
                     // Handle search icon press
+
+                    val intent = intent
+                    val uri = intent.data
+
+                    // Handle the deep link if the URI matches the defined scheme and host
+                    if (uri != null && uri.scheme == "myapp" && uri.host == "pizzaapp") {
+                        // Optionally, you can extract more data from the URI, such as path segments or query parameters
+                        Log.d("DeepLink", "App opened with deep link: $uri")
+                    }
+
+                    // Create a hardcoded deep link URL with query parameters
+                    val deepLink = "myapp://pizzaapp/products?category=vegan&sort=price&filter=cheese"
+                    val intentt = Intent(Intent.ACTION_VIEW, Uri.parse(deepLink))
+                    val urii: Uri? = intentt.data
+                    val category = urii?.getQueryParameter("category")  // Should return "vegan"
+                    val sort = urii?.getQueryParameter("sort")          // Should return "price"
+                    val filter = urii?.getQueryParameter("filter")
+                    Log.d("DeepLink", "Category: $category")  // "vegan"
+                    Log.d("DeepLink", "Sort: $sort")          // "price"
+                    Log.d("DeepLink", "Filter: $filter")
+
+                    val sharelntent = Intent (Intent.ACTION_SEND)
+                    sharelntent.type = "text/plain"
+                    sharelntent.putExtra(Intent.EXTRA_TEXT, "Check this out! $uri")
+                    startActivity (Intent.createChooser (sharelntent, "Share via"))
                     true
                 }
                 else -> false
@@ -153,3 +185,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
