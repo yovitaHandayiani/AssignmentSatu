@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -65,24 +66,31 @@ class ActivityEmpty : AppCompatActivity() {
 
         val imageFromGallery = findViewById<Button>(R.id.imageFromGallery)
         val pickImageLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-                if (result.resultCode == RESULT_OK) {
-                    // Get the selected image URI from the result data
-                    val selectedImageUri: Uri? = result.data?.data
-
-                    // Pass the image URI to the second activity
-                    val intent = Intent(this, ActivityThird::class.java).apply {
-                        data = selectedImageUri
-                    }
-                    startActivity(intent)
+            registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+                uri?.let {
+                    imageView.setImageURI(it) // Display image
+                    Log.d("ImagePicker", "Selected Image URI: $it")
                 }
             }
+//        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+//            if (result.resultCode == RESULT_OK) {
+//                // Get the selected image URI from the result data
+//                val selectedImageUri: Uri? = result.data?.data
+//
+//                // Pass the image URI to the second activity
+//                val intent = Intent(this, ActivityThird::class.java).apply {
+//                    data = selectedImageUri
+//                }
+//                startActivity(intent)
+//            }
+//        }
         imageFromGallery.setOnClickListener {
-            val pickImageIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            pickImageIntent.type = "image/*"  // Only allow images
-
-            // Launch the image picker activity using the result launcher
-            pickImageLauncher.launch(pickImageIntent)
+//            val pickImageIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+//            pickImageIntent.type = "image/*"  // Only allow images
+//
+//            // Launch the image picker activity using the result launcher
+//            pickImageLauncher.launch(pickImageIntent)
+            pickImageLauncher.launch("image/*")
 
         }
 
