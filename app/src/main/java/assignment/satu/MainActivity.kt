@@ -1,5 +1,6 @@
 package assignment.satu
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -86,5 +87,10 @@ class MainActivity : AppCompatActivity() {
         // Set the adapter to the RecyclerView using the ViewBinding
         binding.rvContainer1.adapter = adapter1
         binding.rvContainer2.adapter = adapter2
+
+        binding.bTextIconButton.setOnClickListener {
+            val intentDestination = Intent(this, ActivityFragment::class.java)
+            startActivity(intentDestination)
+        }
     }
 }

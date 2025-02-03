@@ -21,5 +21,8 @@
     <string name="notes_detail">opsional</string>
     <string name="notes_hint">Contoh: Minta Tissue, ya</string>
     <string name="rec_product">Produk Serupa</string>
-    <string name="add_to_cart_btn">+ Keranjang</string>
+    <string name="add_to_cart_btn">Go To Fragment Activity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank1_fragment">Hello blank 1 fragment</string>
+    <string name="hello_blank2_fragment">Hello blank 2 fragment</string>
 </resources>
