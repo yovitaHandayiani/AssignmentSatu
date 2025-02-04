@@ -84,7 +84,11 @@ class MainActivity : AppCompatActivity() {
             selectedPenyajian.bool = true
             adapter1.notifyDataSetChanged()
         }
-        adapter2 = ProductSerupaAdapter(data2)
+        adapter2 = ProductSerupaAdapter(data2){ selectedProduct ->
+            val intent = Intent(this, ActivityProductDetail::class.java)
+            //passing data pakai extra
+            startActivity(intent)
+        }
 
         // Set the adapter to the RecyclerView using the ViewBinding
         binding.rvContainer1.adapter = adapter1

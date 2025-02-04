@@ -62,6 +62,10 @@ class ActivityIntent : AppCompatActivity() {
             startActivity(intent)
         }
 
+//        val intent = Intent(this, ActivityReceiveIntent::class.java)
+//        intent.putParcelableArrayExtra("user_data_array", userArray) // For Parcelable
+//        startActivity(intent)
+
         //Get 1 Image
             // Register the image picker using ActivityResultContracts.GetContent()
             val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->

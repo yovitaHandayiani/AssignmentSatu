@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="CoarseFineLocation">
 
-
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -12,7 +11,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -24,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AssignmentSatu"
         tools:targetApi="31">
+        <activity
+            android:name=".ActivityProductDetail"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -32,7 +33,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />  <!-- Ensure this matches your XML file location -->
+                android:resource="@xml/file_paths" /> <!-- Ensure this matches your XML file location -->
         </provider>
 
         <activity
@@ -47,19 +48,25 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
             <!-- Main activity for launching the app from the home screen -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
             <!-- Deep link configuration to handle myapp://home -->
             <intent-filter android:autoVerify="false">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Define the deep link format -->
-                <data android:scheme="myapp" android:host="pizzaapp" android:pathPrefix="/products"/>
+                <data
+                    android:host="pizzaapp"
+                    android:pathPrefix="/products"
+                    android:scheme="myapp" />
             </intent-filter>
         </activity>
     </application>

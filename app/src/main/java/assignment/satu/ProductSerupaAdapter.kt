@@ -7,7 +7,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import assignment.satu.databinding.ProdukSerupaBinding
 
-class ProductSerupaAdapter(var listProductSerupa: List<ProductSerupaData>) :
+class ProductSerupaAdapter(var listProductSerupa: List<ProductSerupaData>, var selectedProduct: (ProductSerupaData) -> Unit) :
     RecyclerView.Adapter<ProductSerupaAdapter.ViewHolder>() {
     class ViewHolder(val binding: ProdukSerupaBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -43,6 +43,10 @@ class ProductSerupaAdapter(var listProductSerupa: List<ProductSerupaData>) :
             holder.binding.tvcPriceDisc.isVisible = true
             holder.binding.tvcPriceDisc.text = currData.discPrice
             holder.binding.tvcPriceDisc.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+        }
+
+        holder.itemView.setOnClickListener {
+            selectedProduct(currData)
         }
     }
 
