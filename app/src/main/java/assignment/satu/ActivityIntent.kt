@@ -20,6 +20,8 @@ import assignment.satu.databinding.ActivityIntentBinding
 import java.io.File
 import android.Manifest
 import android.provider.Settings
+import android.widget.ImageView
+import android.widget.LinearLayout
 
 class ActivityIntent : AppCompatActivity() {
     private lateinit var binding: ActivityIntentBinding
@@ -142,7 +144,7 @@ class ActivityIntent : AppCompatActivity() {
                 pickFileLauncher.launch(arrayOf("application/pdf", "text/plain"))
             }
 
-        //
+        //Request Permissions at Runtime
             val requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
                 if (isGranted) {
                     Log.d("Permissions", "Camera permission granted")
@@ -155,60 +157,100 @@ class ActivityIntent : AppCompatActivity() {
                 requestPermissionLauncher.launch(Manifest.permission.CAMERA)
             }
 
-        //
-        val requestMultiplePermissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
-            val cameraGranted = permissions[Manifest.permission.CAMERA] ?: false
-            val locationGranted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false
+        //Request Multiple Permissions
+            val requestMultiplePermissionsLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+                val cameraGranted = permissions[Manifest.permission.CAMERA] ?: false
+                val locationGranted = permissions[Manifest.permission.ACCESS_FINE_LOCATION] ?: false
 
-            Log.d("Permissions", "Camera: $cameraGranted, Location: $locationGranted")
+                Log.d("Permissions", "Camera: $cameraGranted, Location: $locationGranted")
+            }
+
+    //        binding.btnMultipleReqPermRun.setOnClickListener {
+    //            requestMultiplePermissionsLauncher.launch(
+    //                arrayOf(
+    //                    Manifest.permission.CAMERA,
+    //                    Manifest.permission.ACCESS_FINE_LOCATION
+    //                )
+    //            )
+    //        }
+
+            binding.btnMultipleReqPermRun.setOnClickListener {
+                val cameraPermissionGranted = ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.CAMERA
+                ) == PackageManager.PERMISSION_GRANTED
+
+                val locationPermissionGranted = ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED
+
+                // If the permissions are not granted, request them
+                if (!cameraPermissionGranted || !locationPermissionGranted) {
+                    // Check if the user has denied permissions but not selected "Don't ask again"
+                    if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) ||
+                        shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+                        // Show a rationale if necessary, then request the permissions
+                        Log.d("Permissions", "Requesting permissions again")
+                        requestMultiplePermissionsLauncher.launch(
+                            arrayOf(
+                                Manifest.permission.CAMERA,
+                                Manifest.permission.ACCESS_FINE_LOCATION
+                            )
+                        )
+                    } else {
+                        // Permissions were denied with "Don't ask again", you can open the settings
+                        Log.d("Permissions", "Permissions permanently denied, show settings prompt")
+                        // Optionally show a message explaining that the user needs to manually enable the permissions
+                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                        val uri = Uri.fromParts("package", packageName, null)
+                        intent.data = uri
+                        startActivity(intent)
+                    }
+                } else {
+                    Log.d("Permissions", "Permissions already granted")
+                }
+            }
+
+        //Pick multiple Image
+//            // Register the multiple image picker launcher
+//            val pickMultipleImagesLauncher = registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uris ->
+//                uris.forEach { uri ->
+//                    Log.d("ImagePicker", "Selected Image URI: $uri")
+//                    // Optionally, you can handle the URIs here, like displaying the first image in an ImageView
+//                    // For example, setting the first selected image to an ImageView:
+//                    if (uris.isNotEmpty()) {
+//                        binding.imageViewId.setImageURI(uris[0]) // Set the first selected image to the ImageView
+//                    }
+//                }
+//            }
+//
+//            // Set the click listener for the "Pick Multiple Images" button
+//            binding.btnMultImage.setOnClickListener {
+//                pickMultipleImagesLauncher.launch("image/*") // Allow selecting multiple images
+//            }
+
+        // Register the multiple image picker launcher
+        val pickMultipleImagesLauncher = registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uris ->
+            uris.forEach { uri ->
+                Log.d("ImagePicker", "Selected Image URI: $uri")
+                // Add each selected image as an ImageView in the layout
+                val imageView = ImageView(this)
+                imageView.setImageURI(uri)  // Set the image URI to the ImageView
+//                imageView.layoutParams = LinearLayout.LayoutParams(
+//                    LinearLayout.LayoutParams.WRAP_CONTENT,
+//                    LinearLayout.LayoutParams.WRAP_CONTENT
+//                )
+                imageView.layoutParams = LinearLayout.LayoutParams(100, 100)
+                // Add the ImageView to the layout (LinearLayout or GridLayout)
+                binding.llSelectedImages.addView(imageView)
+            }
         }
 
-//        binding.btnMultipleReqPermRun.setOnClickListener {
-//            requestMultiplePermissionsLauncher.launch(
-//                arrayOf(
-//                    Manifest.permission.CAMERA,
-//                    Manifest.permission.ACCESS_FINE_LOCATION
-//                )
-//            )
-//        }
-
-        binding.btnMultipleReqPermRun.setOnClickListener {
-            val cameraPermissionGranted = ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
-            ) == PackageManager.PERMISSION_GRANTED
-
-            val locationPermissionGranted = ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-
-            // If the permissions are not granted, request them
-            if (!cameraPermissionGranted || !locationPermissionGranted) {
-                // Check if the user has denied permissions but not selected "Don't ask again"
-                if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) ||
-                    shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                    // Show a rationale if necessary, then request the permissions
-                    Log.d("Permissions", "Requesting permissions again")
-                    requestMultiplePermissionsLauncher.launch(
-                        arrayOf(
-                            Manifest.permission.CAMERA,
-                            Manifest.permission.ACCESS_FINE_LOCATION
-                        )
-                    )
-                } else {
-                    // Permissions were denied with "Don't ask again", you can open the settings
-                    Log.d("Permissions", "Permissions permanently denied, show settings prompt")
-                    // Optionally show a message explaining that the user needs to manually enable the permissions
-                    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                    val uri = Uri.fromParts("package", packageName, null)
-                    intent.data = uri
-                    startActivity(intent)
-                }
-            } else {
-                Log.d("Permissions", "Permissions already granted")
-            }
+        // Set the click listener for the "Pick Multiple Images" button
+        binding.btnMultImage.setOnClickListener {
+            pickMultipleImagesLauncher.launch("image/*") // Allow selecting multiple images
         }
     }
 }

@@ -93,7 +93,21 @@
             android:layout_gravity="center"
             android:id="@+id/btnMultipleReqPermRun"
             android:text="Request Permissions at Runtime"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/btnMultImage"
+            android:text="Pick Multiple Images"/>
 
+        <GridLayout
+            android:id="@+id/llSelectedImages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:columnCount="3"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
 
     </LinearLayout>
 
