@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AssignmentSatu"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityReceiveIntent"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityIntent"
+            android:exported="false" />
+        <activity
             android:name=".ActivityFragment"
             android:exported="false" />
         <activity
