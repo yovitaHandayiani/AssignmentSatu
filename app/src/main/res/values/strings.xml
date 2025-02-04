@@ -25,4 +25,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank1_fragment">Hello blank 1 fragment</string>
     <string name="hello_blank2_fragment">Hello blank 2 fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_dialog_fragment">Enter Your Name</string>
 </resources>

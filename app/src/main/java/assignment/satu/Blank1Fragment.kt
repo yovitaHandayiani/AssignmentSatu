@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import assignment.satu.databinding.FragmentBlank1Binding
 
 
@@ -32,10 +33,27 @@ class Blank1Fragment : Fragment() {
             val mFragmentManager = parentFragmentManager
             mFragmentManager
                 .beginTransaction().apply {
-                     replace(R.id.fragment_container, frament2, Blank2Fragment::class.java.simpleName)
+                    replace(
+                        R.id.fragment_container,
+                        frament2,
+                        Blank2Fragment::class.java.simpleName
+                    )
                     addToBackStack(null)
                     commit()
                 }
         }
+        binding.btnDialog.setOnClickListener {
+            val mDialogFragment = MyDialogFragment()
+            val mFragmentManager = childFragmentManager
+            mDialogFragment.show(mFragmentManager, MyDialogFragment::class.java.simpleName)
+
+        }
+    }
+
+    var dialogListener: MyDialogFragment.DialogListener = object : MyDialogFragment.DialogListener {
+        override fun onSubmit(text: String) {
+            Toast.makeText(requireActivity(), "Success", Toast.LENGTH_SHORT).show()
+        }
+
     }
 }
