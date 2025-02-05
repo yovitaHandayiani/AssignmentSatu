@@ -19,6 +19,9 @@ import androidx.core.view.WindowInsetsCompat
 import assignment.satu.databinding.ActivityIntentBinding
 import java.io.File
 import android.Manifest
+import android.content.ContentValues
+import android.os.Environment
+import android.provider.MediaStore
 import android.provider.Settings
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -127,6 +130,15 @@ class ActivityIntent : AppCompatActivity() {
                     "assignment.satu.fileprovider",  // Correct authority (replace with your actual package name)
                     File(filesDir, "photo.jpg")   // Store image in app's internal storage
                 )
+
+//                // save to gallery
+//                val contentValues = ContentValues().apply {
+//                    put(MediaStore.Images.Media.DISPLAY_NAME, "photo_${System.currentTimeMillis()}.jpg") // Image name
+//                    put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg") // Image type
+//                    put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES) // Store in "Pictures" directory
+//                }
+//                // Insert the image into the MediaStore, which returns a content URI
+//                imageUri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)!!
 
                 // Launch the camera to capture the image
                 takePictureLauncher2.launch(imageUri)

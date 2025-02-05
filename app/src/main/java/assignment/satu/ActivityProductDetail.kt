@@ -1,6 +1,7 @@
 package assignment.satu
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,10 +20,15 @@ class ActivityProductDetail : AppCompatActivity() {
         setContentView(binding.root)
 
         val getTitle = intent.getStringExtra("EXTRA_TITLE")
-        val getPrice = intent.getIntExtra("EXTRA_PRICE", 0)
+        val getPrice = intent.getStringExtra("EXTRA_PRICE") ?: "Default Price"
         val getImage = intent.getIntExtra("EXTRA_IMAGE", R.drawable.xiaolongbao)
-        val getDisc = intent.getIntExtra("EXTRA_DISC", 0)
-//        val getBool = intent.getBooleanExtra("EXTRA_BOOL", false)
+        val getDisc = intent.getStringExtra("EXTRA_DISC") ?: "No Discount"
+        val getBool = intent.getBooleanExtra("EXTRA_BOOL", false)
+        Log.d("IntentData", "Title: $getTitle")
+        Log.d("IntentData", "Price: $getPrice")
+        Log.d("IntentData", "Image: $getImage")
+        Log.d("IntentData", "Discount: $getDisc")
+        Log.d("IntentData", "Bool: $getBool")
 
         //attach fragment to this activity
         val mFragmentManager = supportFragmentManager
@@ -39,10 +45,10 @@ class ActivityProductDetail : AppCompatActivity() {
         //translating data passed from activity to fragment
         val bundle = Bundle()
         bundle.putString("EXTRA_TITLE", getTitle)
-        bundle.putInt("EXTRA_PRICE", getPrice)
+        bundle.putString("EXTRA_PRICE", getPrice)
         bundle.putInt("EXTRA_IMAGE", getImage)
-        bundle.putInt("EXTRA_DISC", getDisc)
-        bundle.putBoolean("EXTRA_BOOL", intent.getBooleanExtra("EXTRA_BOOL", false))
+        bundle.putString("EXTRA_DISC", getDisc)
+        bundle.putBoolean("EXTRA_BOOL", getBool)
         fragmentDestination.arguments = bundle
     }
 }

@@ -93,6 +93,12 @@ class MainActivity : AppCompatActivity() {
                 putExtra("EXTRA_DISC", selectedProduct.discPrice)
                 putExtra("EXTRA_BOOL", selectedProduct.discBool)
             }
+            Log.d("ProductData", "Title: ${selectedProduct.title}")
+            Log.d("ProductData", "Price: ${selectedProduct.price}")
+            Log.d("ProductData", "Image: ${selectedProduct.image}")
+            Log.d("ProductData", "Discount Price: ${selectedProduct.discPrice}")
+            Log.d("ProductData", "Discount Bool: ${selectedProduct.discBool}")
+
             startActivity(intent)
         }
 

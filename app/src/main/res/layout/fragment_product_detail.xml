@@ -20,8 +20,8 @@
         <!--    imagePizza-->
         <ImageView
             android:id="@+id/ivProductFragment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:scaleType="centerCrop"
             android:src="@drawable/pizza"
             app:layout_constraintDimensionRatio="1:1"
@@ -255,7 +255,7 @@
     android:background="@color/white"
     >
     <View
-        android:id="@+id/vDividerThinTiga"
+        android:id="@+id/vDividerThinTigaFragment"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
@@ -263,7 +263,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
-        android:id="@+id/bIconButton"
+        android:id="@+id/bIconButtonFragment"
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:icon = "@drawable/cart_shopping_svgrepo_com"
@@ -281,18 +281,18 @@
         />
 
     <Button
-        android:id="@+id/bTextIconButton"
+        android:id="@+id/bTextIconButtonFragment"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:strokeColor = "@color/blue"
-        android:text="@string/add_to_cart_btn"
+        android:text="Go to Fragment"
         android:textAppearance="?attr/textAppearanceButton"
         android:textColor="@color/white"
         android:backgroundTint="@color/blue"
         style="?attr/materialButtonOutlinedStyle"
-        app:layout_constraintStart_toEndOf="@+id/bIconButton"
-        app:layout_constraintTop_toTopOf="@+id/bIconButton"
-        app:layout_constraintBottom_toBottomOf="@+id/bIconButton"
+        app:layout_constraintStart_toEndOf="@+id/bIconButtonFragment"
+        app:layout_constraintTop_toTopOf="@+id/bIconButtonFragment"
+        app:layout_constraintBottom_toBottomOf="@+id/bIconButtonFragment"
         app:cornerRadius = "8dp"
         android:layout_marginStart="84dp"
         android:layout_marginEnd="12dp"
