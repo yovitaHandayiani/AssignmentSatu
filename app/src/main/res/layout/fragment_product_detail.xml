@@ -1,14 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentProductDetail">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    imagePizza-->
+        <ImageView
+            android:id="@+id/ivProductFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pizza"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--    top navigation bar-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/mdTopAppBarFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:menu="@menu/top_app_bar"
+                app:navigationIcon="@drawable/back_svgrepo_com"
+                app:navigationIconTint="@android:color/darker_gray"
+                app:title="@string/page_title" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--    Content-->
+        <TextView
+            android:id="@+id/tvMenuTitleFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/menu_title"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProductFragment" />
+
+        <TextView
+            android:id="@+id/tvMenuPriceFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/menu_current_price"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMenuTitleFragment" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/mdChipFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/discount"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="#9B0000"
+            app:chipBackgroundColor="#55F88181"
+            app:chipCornerRadius="0dp"
+            app:chipEndPadding="-2dp"
+            app:chipMinHeight="25dp"
+            app:chipMinTouchTargetSize="0dp"
+            app:chipStartPadding="-2dp"
+            app:chipStrokeWidth="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMenuPriceFragment" />
+
+        <TextView
+            android:id="@+id/tvMenuBeforePriceFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/menu_before_price"
+            android:textAppearance="?attr/textAppearanceCaption"
+            app:layout_constraintBottom_toBottomOf="@id/mdChipFragment"
+            app:layout_constraintStart_toEndOf="@id/mdChipFragment"
+            app:layout_constraintTop_toTopOf="@id/mdChipFragment" />
+
+        <!--    divider-->
+        <View
+            android:id="@+id/vDividerThinFragment"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMenuBeforePriceFragment" />
+
+        <TextView
+            android:id="@+id/tvDescriptionFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/deskripsi_produk_title"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDividerThinFragment" />
+
+        <TextView
+            android:id="@+id/tvMenuDescriptionFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="@string/product_desc"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescriptionFragment" />
+
+        <Button
+            android:id="@+id/mdTextButtonFragment"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:text="@string/show_more_btn"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="#00579E"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvMenuDescriptionFragment" />
+
+        <!--    divider-->
+        <View
+            android:id="@+id/vDividerThinDuaFragment"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mdTextButtonFragment" />
+
+        <View
+            android:id="@+id/vDividerThickFragment"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDividerThinDuaFragment" />
+
+        <View
+            android:id="@+id/vDividerThickDuaFragment"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDividerThickFragment" />
+
+        <TextView
+            android:id="@+id/tvNotesTitleFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:text="@string/notes_title"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vDividerThickDuaFragment" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/notes_detail"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNotesTitleFragment"
+            app:layout_constraintStart_toEndOf="@+id/tvNotesTitleFragment"
+            app:layout_constraintTop_toTopOf="@+id/tvNotesTitleFragment" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilOrderNotesFragment"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="12dp"
+            android:hint="@string/notes_hint"
+            android:textAppearance="?attr/textAppearanceBody1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNotesTitleFragment">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBody1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:layout_constraintTop_toBottomOf="@+id/tilOrderNotesFragment"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@android:color/transparent"
+            >
+        </View>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:background="@color/white"
+    >
+    <View
+        android:id="@+id/vDividerThinTiga"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/bIconButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:icon = "@drawable/cart_shopping_svgrepo_com"
+        app:iconTint = "@color/blue"
+        app:iconSize = "28dp"
+        app:iconGravity="textStart"
+        app:strokeColor = "@color/blue"
+        style="?attr/materialButtonOutlinedStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        app:cornerRadius = "8dp"
+        android:layout_marginStart="12dp"
+        android:importantForAccessibility="no"
+        />
+
+    <Button
+        android:id="@+id/bTextIconButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:strokeColor = "@color/blue"
+        android:text="@string/add_to_cart_btn"
+        android:textAppearance="?attr/textAppearanceButton"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        style="?attr/materialButtonOutlinedStyle"
+        app:layout_constraintStart_toEndOf="@+id/bIconButton"
+        app:layout_constraintTop_toTopOf="@+id/bIconButton"
+        app:layout_constraintBottom_toBottomOf="@+id/bIconButton"
+        app:cornerRadius = "8dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="12dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

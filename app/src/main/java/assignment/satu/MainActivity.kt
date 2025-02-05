@@ -85,8 +85,14 @@ class MainActivity : AppCompatActivity() {
             adapter1.notifyDataSetChanged()
         }
         adapter2 = ProductSerupaAdapter(data2){ selectedProduct ->
-            val intent = Intent(this, ActivityProductDetail::class.java)
-            //passing data pakai extra
+
+            val intent = Intent(this, ActivityProductDetail::class.java).apply {
+                putExtra("EXTRA_TITLE", selectedProduct.title)
+                putExtra("EXTRA_PRICE", selectedProduct.price)
+                putExtra("EXTRA_IMAGE", selectedProduct.image)
+                putExtra("EXTRA_DISC", selectedProduct.discPrice)
+                putExtra("EXTRA_BOOL", selectedProduct.discBool)
+            }
             startActivity(intent)
         }
 

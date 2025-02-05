@@ -25,6 +25,5 @@ class ActivityFragment : AppCompatActivity() {
                 .add(R.id.fragment_container, fragment1, Blank1Fragment::class.java.simpleName)
                 .commit()
         }
-        val fragment2 = Blank2Fragment()
     }
 }
