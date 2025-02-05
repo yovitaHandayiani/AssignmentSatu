@@ -1,8 +1,11 @@
-package assignment.satu
+package assignment.satu.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import assignment.satu.R
+import assignment.satu.ui.adapter.PenyajianAdapter
+import assignment.satu.ui.adapter.ProductSerupaAdapter
 import assignment.satu.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

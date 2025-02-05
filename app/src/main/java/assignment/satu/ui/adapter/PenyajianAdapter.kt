@@ -1,8 +1,9 @@
-package assignment.satu
+package assignment.satu.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import assignment.satu.ui.PenyajianData
 import assignment.satu.databinding.PenyajianBinding
 
 class PenyajianAdapter(

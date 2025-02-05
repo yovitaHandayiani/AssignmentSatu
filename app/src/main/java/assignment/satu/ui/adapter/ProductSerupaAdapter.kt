@@ -1,10 +1,11 @@
-package assignment.satu
+package assignment.satu.ui.adapter
 
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import assignment.satu.ui.ProductSerupaData
 import assignment.satu.databinding.ProdukSerupaBinding
 
 class ProductSerupaAdapter(var listProductSerupa: List<ProductSerupaData>) :

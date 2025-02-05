@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+//    untuk paker ksp
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
@@ -36,6 +38,9 @@ android {
     buildFeatures{
         viewBinding = true
     }
+    configurations.all{
+        exclude(group = "com.intellij", module = "annotations")
+    }
 }
 
 dependencies {
@@ -48,4 +53,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //
+    implementation(libs.androidx.room)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.androidx.lifecycle.runtime)
+    ksp(libs.androidx.room.compiler)
 }
