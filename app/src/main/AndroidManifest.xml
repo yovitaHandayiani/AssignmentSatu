@@ -63,7 +63,6 @@
             <!-- Deep link configuration to handle myapp://home -->
             <intent-filter android:autoVerify="false">
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <!-- Define the deep link format -->

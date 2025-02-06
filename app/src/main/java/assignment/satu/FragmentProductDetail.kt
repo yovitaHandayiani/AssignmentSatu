@@ -80,7 +80,18 @@ class FragmentProductDetail : Fragment() {
         }
 
         binding.bTextIconButtonFragment.setOnClickListener {
-
+            val mFragmentManager = parentFragmentManager
+            mFragmentManager
+                .beginTransaction().apply {
+                    replace(
+                        R.id.fragment_container_product_detail,
+                        FragmentIntent(),
+                        FragmentIntent::class.java.simpleName
+                    )
+                    addToBackStack(null)
+                    commit()
+                }
         }
+
     }
 }

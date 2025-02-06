@@ -130,6 +130,7 @@ class MainActivity : AppCompatActivity() {
                     // Handle search icon press
                     val intent = intent
                     val uri = intent.data
+                    Log.d("DeepLink", "App opened with deep link: $uri")
 
                     // Handle the deep link if the URI matches the defined scheme and host
                     if (uri != null && uri.scheme == "myapp" && uri.host == "pizzaapp") {

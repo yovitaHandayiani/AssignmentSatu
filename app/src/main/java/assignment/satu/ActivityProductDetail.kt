@@ -2,6 +2,7 @@ package assignment.satu
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -50,5 +51,46 @@ class ActivityProductDetail : AppCompatActivity() {
         bundle.putString("EXTRA_DISC", getDisc)
         bundle.putBoolean("EXTRA_BOOL", getBool)
         fragmentDestination.arguments = bundle
+
+
+//        binding.btBottomNavigation.setOnItemSelectedListener { item ->
+//            // Get the activity to access its fragment manager and container
+//            val fragmentContainer = findViewById<View>(R.id.fragment_container_product_detail)
+//            Log.d("FragmentTransaction", "Fragment container: $fragmentContainer")
+//
+//            if (fragmentContainer != null) {
+//                // Access the Activity's FragmentManager for fragment transactions
+//                val fragmentTransaction = supportFragmentManager?.beginTransaction()
+//
+//                when (item.itemId) {
+//                    R.id.page_1 -> {
+//                        // Replace with Blank1Fragment in the activity container
+//                        fragmentTransaction?.replace(
+//                            R.id.fragment_container_product_detail,  // The fragment container in the Activity layout
+//                            Blank1Fragment(),
+//                            Blank1Fragment::class.java.simpleName
+//                        )
+//                        fragmentTransaction?.addToBackStack(null)  // Optionally add to the back stack
+//                        fragmentTransaction?.commit()
+//                        true
+//                    }
+//                    R.id.page_2 -> {
+//                        // Replace with Blank2Fragment in the activity container
+//                        fragmentTransaction?.replace(
+//                            R.id.fragment_container_product_detail,  // The fragment container in the Activity layout
+//                            Blank2Fragment(),
+//                            Blank2Fragment::class.java.simpleName
+//                        )
+//                        fragmentTransaction?.addToBackStack(null)  // Optionally add to the back stack
+//                        fragmentTransaction?.commit()
+//                        true
+//                    }
+//                    else -> false
+//                }
+//            } else {
+//                Log.e("FragmentTransaction", "Fragment container not found in the activity!")
+//                false
+//            }
+//        }
     }
 }
